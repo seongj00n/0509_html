@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEOBEAT</title>
+    <style>
+        * { box-sizing:border-box;}
+        li,ul {list-style:none;}
+        a {text-decoration: none;} 
+        header {width:100%; height:120px;  position: fixed; z-index:1; background-color: rgb(255, 245, 253); opacity: 0.5;}
+        #logot {width:2000px; height:120px;  margin:-20px auto 0px; }
+        #logo {width:320px; height:120px; float:left; }
+        #logo > img {width:100%; height:100%; }
+
+        #nav {width:1400px; height:120px; margin:0 auto; }
+        #nav > ul > li {font-size: 20px; float:left; margin:40px 0 0 145px; }
+        #nav > ul > li > a {color:rgb(0, 0, 0);  }
+        #nav > ul > li > a:hover {color:rgb(255, 0, 0); }
+
+        #iconbox {width:300px; height:120px;  float:right; margin:-125px 0 0 0px;}
+        #iconbox1 {width:30px; height:30px; display:inline-block;
+             margin:50px 0 0 20px; }
+        #iconbox > #iconbox1 > img {width:100%; height:100%; }
+
+        #slider {width:100%; height:1000px; position: relative;}
+        #slider > img {width:100%; height:100%; position: absolute;}
+        .slibox {width:100%; height:500px; margin:200px auto 0px; position: absolute; z-index: 1;}
+        .textt {width:600px; height:200px; margin:150px auto;} 
+        .textt > h1 {text-align: center; margin:0px auto 0px; font-size: 100px; color:#fff;}  
+        .textt > p {text-align: center; margin:0px auto 0px; font-size: 15px; color:#fff;}   
+
+        main {width:100%; height:9000px; background-color: rgb(255, 224, 229); position: relative; margin: 0 auto;}
+        #textbox {width:100%; height:300px;  margin:0px auto; padding:120px;}   
+        #textbox > h1 {text-align:center; margin:0px auto; font-size: 55px; color:rgb(133, 27, 233);}
+        #textbox > p {text-align:center; margin:0px auto; font-size:13px; margin:15px; color:rgb(150, 150, 150);}
+
+        #mainimg {width:100%; height:2000px; }
+        #mainimg1 {width:2000px; height:2000px; margin:0 auto;}
+
+        .mainimg2 {width:500px; height:700px;  display:inline-block; margin:100px 0 0 120px; 
+        box-shadow: 4px 4px 4px rgb(255, 176, 176); border-radius: 40px; overflow: hidden;}
+        .mainimg2 > a > img {width:500px; height:500px;}
+        .mainimg2 > a > img:hover {transition:all 0.5s; opacity: 0.8; transform: scale(1.10);}
+        .mainimg2 > h3 {margin:100px 0 0 30px; font-size: 25px; color:rgb(133, 27, 233);}
+        .mainimg2 > p {margin:0px 0 0 30px; font-size: 13px; color: rgb(150, 150, 150);}
+
+        #buttonbox {width:200px; height:50px; margin:150px auto;}
+        #buttonbox > button {width:100%; height:100%; font-size: 22px; box-shadow: 4px 4px 4px rgb(255, 176, 176);
+            border-radius: 20px; color:rgb(0, 0, 0);  border: 0; background-color: rgb(255, 241, 243);} 
+        #buttonbox > button:hover {transition:all 0.5s; opacity: 0.9; transform: scale(1.10);}
+
+        #mainbox2 {width:100%; height:800px; }
+        #linkbox {width:1500px; height:800px;  margin:0px auto; background-color:}
+        #linkbox > h1 {text-align: center; font-size: 250px; margin:-50px auto; opacity: 0.5; color:rgb(236, 168, 179)}
+
+        #number {width:1400px; height:290px; background-color: rgb(255, 235, 240);
+             margin:130px auto; border-radius: 20px; box-shadow: 4px 4px 4px rgb(255, 192, 192);}
+        #numbox {width:250px; height:150px;  display: inline-block; margin:70px 0 0 75px;}
+        #numbox > h2 {text-align: center; font-size:70px ; margin:0px auto; color:rgb(133, 27, 233);} 
+        #numbox > p {text-align: center; font-size:20px ; margin:0px auto; color: rgb(191, 128, 250);}
+        
+        #artbox {width:100%; height:550px; margin:100px auto;}
+        #artbox1 {width:2000px; height:550px;  margin:0 auto;}
+        #artbox1 > h1 {text-align: center; font-size:55px; color: rgb(133, 27, 233);}
+        #artbox1 > p {text-align: center; font-size:13px; color: rgb(150, 150, 150);}
+
+        #artbox2 {width:250px; height:350px; display:inline-block; margin:10px 0 0 66px;}    
+        #artbox3 {width:230px; height:230px; margin:3px auto; border-radius: 120px; overflow:hidden;}    
+        #artbox3 > img {width:100%; height:100%; }
+        #artbox3 > img:hover {opacity: 0.9; transition:all 0.5s; transform:scale(1.12);}
+        #artbutton {width:150px; height:40px; background-color: blueviolet; margin:50px auto;} 
+        #artbutton > button {width:100%; height:100%;  border:0; font-size:large;}
+        #artbutton > button:hover {background-color: black; color:#fff; transform: scale(1.02); 
+        opacity: 0.9; transition:all 0.5s;}
+
+        #tikbox {width:100%; height:1100px;  margin:200px auto;}
+        #tikbox > h1 {text-align: center; font-size:55px; color: rgb(133, 27, 233);}
+        #tikbox > p {text-align: center; font-size:13px; color: rgb(150, 150, 150);}
+
+        #tikbox1 {width:1000px; height:860px;  margin:0 auto; padding:10px; background-color: rgb(255, 241, 253);
+             border-radius: 30px; opacity: 0.9;}
+        #tikbox2 {width:800px; height:75px;  margin:40px auto 30px; padding:0px;}
+
+        #tiname1 {width:150px; height:75px;  }
+        #tiname1 > h2 {margin:0 auto; text-align: center;}
+        #tiname2 > h3 {margin:0 auto; text-align: center; }
+        #tiname2 > h5 {margin:0 auto; text-align: center; color:rgb(150, 150, 150);} 
+        #tiname3 > button {width:100%; height:65%; border: 0; border-radius: 35px; font-size: 20px; box-shadow: 2px 2px 2px rgb(255, 209, 216);} 
+        #tiname3 > button:hover { opacity: 0.9; transition:all 0.5s;  transform: scale(1.02); box-shadow: 4px 4px 4px rgb(255, 189, 189);}
+
+        #tiname2 {width:240px; height:75px;  margin:-75px 0 0 210px;}    
+        #tiname3 {width:200px; height:75px;  margin:-75px 0 0 580px; }
+
+        #subbox {width:100%; height:1000px; margin:-50px auto;}
+        #subbox1 {width:2000px; height:1000px;  margin:0 auto;}
+
+        #opabox1 {width:450px; height:450px;  margin:0px 0 0 20px; border-radius: 20px; overflow: hidden;}
+        #opabox2 {width:450px; height:450px;  margin:-450px 0 0 530px; border-radius: 20px; overflow: hidden;}
+        #opabox3 {width:960px; height:450px;  margin:50px 0 0 20px; border-radius: 20px; overflow: hidden;}
+        #opabox4 {width:450px; height:950px;  margin:-950px 0 0 1030px; border-radius: 20px; overflow: hidden;}
+        #opabox5 {width:450px; height:450px;  margin:-950px 0 0 1530px; border-radius: 20px; overflow: hidden;}
+        #opabox6 {width:450px; height:450px; background-color: rgb(114, 235, 235); margin:50px 0 0 1530px; border-radius: 20px; overflow: hidden;}
+
+        #opabox1 > img {width:100%; height:100%;}
+        #opabox2 > img {width:100%; height:100%;}
+        #opabox3 > img {width:100%; height:100%;}
+        #opabox4 > img {width:100%; height:100%;}
+        #opabox5 > img {width:100%; height:100%;}
+        #opabox6 > img {width:100%; height:100%;}
+
+        #opabox1 > img:hover {opacity: 0.5; transition:all 0.5s;}
+        #opabox2 > img:hover {opacity: 0.5; transition:all 0.5s;}
+        #opabox3 > img:hover {opacity: 0.5; transition:all 0.5s;}
+        #opabox4 > img:hover {opacity: 0.5; transition:all 0.5s;}
+        #opabox5 > img:hover {opacity: 0.5; transition:all 0.5s;}
+        #opabox6 > img:hover {opacity: 0.5; transition:all 0.5s;}
+
+        #musbox {width:100%; height:750px;  margin:180px 0 0 0px; }
+        #musbox1 {width:1300px; height:750px;  margin:0 auto; background-color: blueviolet;} 
+        #musbox2 {width:580px; height:750px; margin:0 0 0 110px; border-radius: 25px;
+             overflow: hidden; background-color: rgb(252, 189, 241); box-shadow: 4px 4px 4px pink;} 
+
+        #musimg {width:520px; height: 130px;  margin:20px 0 2px 20px;} 
+        #musimg1 {width:130px; height:130px; border-radius: 80px;  margin:0 0 0 30px; overflow: hidden;}
+        #musimg1 > img {width:100%; height:100%;}
+        #musimg2 {width:300px; height:80px;   float: right; margin:-100px 0 0 0px;}
+        #musimg2 > h3 {font-size: 25px; margin:0; color:#fff;}   
+        #musimg2 > h5 {font-size: 18px; margin:5px 0 0 0px; color:#fff;} 
+
+        #musbox3 {width:580px; height:600px; background-color:rgb(255, 255, 255) ; margin:15px auto 0px; padding:5px 0 0 0px;} 
+        #chart1 {width:580px; height:60px; background-color: aquamarine; margin:20px auto 10px;} 
+        #chart2 {width:250px; height:60px; background-color: blanchedalmond;}
+        #chart2 > h4 {text-align: center; }
+        #chart2 > p {text-align: center; font-size: 14px; margin:-15px 0 0 0px;}    
+
+        #chart3 {width:200px; height:60px; background-color: burlywood; margin:-60px 0 0 380px;}
+
+        footer {width:100%; height:300px; background-color: aquamarine;}
+
+    </style>
+</head>
+
+<body>
+    <header>
+            <div id="logot">
+                <div id="logo">
+                    <img src="img/logo.png" alt="로고">
+                </div>
+                <div id="nav">
+                    <ul>
+                        <li><a href="#"><b>Home</b></a></li>
+                        <li><a href="#"><b>Pages</b></a></li>
+                        <li><a href="#"><b>Discography</b></a></li>
+                        <li><a href="#"><b>Event</b></a></li>
+                        <li><a href="#"><b>Blog</b></a></li>
+                        <li><a href="#"><b>Shop</b></a></li>
+                    </ul>
+                </div>
+                <div id="iconbox">
+                    <div id="iconbox1">
+                        <img src="img/icon1.webp" alt="아이콘1">
+                    </div>
+                    <div id="iconbox1">
+                        <img src="img/icon1.png" alt="아이콘2">
+                    </div>
+                    <div id="iconbox1">
+                        <img src="img/icon2.png" alt="아이콘3">
+                    </div>
+                </div>
+            </div>
+    </header>
+
+    <div id ="slider">
+        <img src="img/main_slide_02.jpg" alt="메인">
+        <div class="slibox">
+            <div class="textt">
+                <h1>Best Sound</h1>
+                <p>Welcome to NeoBeat, your new website and place where your tunes comes first</p>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div id="mainbox">
+            <div id="textbox">
+                <h1>Our Discography</h1>
+                <p>Lorem Ipsum rhis ts toshhoop svetsgin. Proin gravida nibh lorem <br>quis bibendum aucto</p>
+            </div>
+            <div id="mainimg">
+                <div id="mainimg1">
+                    <div class="mainimg2">
+                        <a href="#"><img src="img/imgbox_01_1.jpg" alt="메인이미지1"></a>
+                        <h3>Frau Power</h3>
+                        <p>Frau Power</p>
+                    </div>
+
+                    <div class="mainimg2">
+                        <a href="#"><img src="img/imgbox_01_2.jpg" alt="메인이미지2"></a>
+                        <h3>Grace Moreno</h3>
+                        <p>Grace Moreno</p>
+                    </div>
+
+                    <div class="mainimg2">
+                        <a href="#"><img src="img/imgbox_01_3.jpg" alt="메인이미지3"></a>
+                        <h3>Rora Poter</h3>
+                        <p>Rora Poter</p>
+                    </div>
+
+                    <div class="mainimg2">
+                        <a href="#"><img src="img/imgbox_01_4.jpg" alt="메인이미지4"></a>
+                        <h3>Polly Lo</h3>
+                        <p>Polly Lo</p>
+                    </div>
+
+                    <div class="mainimg2">
+                        <a href="#"><img src="img/imgbox_01_5.jpg" alt="메인이미지5"></a>
+                        <h3>Neon Blue</h3>
+                        <p>Neon Blue</p>
+                    </div>
+
+                    <div class="mainimg2">
+                        <a href="#"><img src="img/imgbox_01_6.jpg" alt="메인이미지6"></a>
+                        <h3>Simon Taylor</h3>
+                        <p>Simon Taylor</p>
+                    </div>
+                    
+                    <div id="buttonbox">
+                        <button>VIEW MORE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mainbox2">
+                <div id="linkbox">
+                    <h1><b>upcoming</b></h1>
+                    <div id="number">
+                        <div id="numbox">
+                            <h2><b>-114</b></h2>
+                            <p><b>Days</b></p>
+                        </div>
+
+                        <div id="numbox">
+                            <h2><b>-13</b></h2>
+                            <p><b>Hours</b></p>
+                        </div>
+
+                        <div id="numbox">
+                            <h2><b>-16</b></h2>
+                            <p><b>Minutes</b></p>
+                        </div>
+
+                        <div id="numbox">
+                            <h2><b>32</b></h2>
+                            <p><b>Seconds</b></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+                <div id="artbox">
+                    <div id="artbox1">
+                        <h1>Artists You May Like</h1>
+                    <p>Lorem Ipsum rhis ts toshhoop svetsgin. Proin gravida nibh lorem<br>quis bibendum aucto</p>
+                    <div id="artbox2">
+                        <div id="artbox3">
+                            <img src="img/atist-image-1.jpg" alt="가수1">
+                        </div>
+                        <div id="artbutton">
+                            <button>Frau Power</button>
+                        </div>
+                        
+                    </div>
+
+                    <div id="artbox2">
+                        <div id="artbox3">
+                            <img src="img/atist-image-2.jpg" alt="가수2">
+                        </div>
+                        <div id="artbutton">
+                            <button>Rora Poter</button>
+                        </div>
+                        
+                    </div>
+
+                    <div id="artbox2">
+                        <div id="artbox3">
+                            <img src="img/atist-image-3.jpg" alt="가수3">
+                        </div>
+                        <div id="artbutton">
+                            <button>Polly Lo</button>
+                        </div>
+                    </div>
+
+                    <div id="artbox2">
+                        <div id="artbox3">
+                            <img src="img/atist-image-4.jpg" alt="가수4">
+                        </div>
+                        <div id="artbutton">
+                            <button>Strongers</button>
+                        </div>
+                        
+                    </div>
+
+                    <div id="artbox2">
+                        <div id="artbox3">
+                            <img src="img/atist-image-5.jpg" alt="가수5">
+                        </div>
+                        <div id="artbutton">
+                            <button>The Frtklles</button>
+                        </div>
+                        
+                    </div>
+
+                    <div id="artbox2">
+                        <div id="artbox3">
+                            <img src="img/atist-image-6.jpg" alt="가수6">
+                        </div>
+                        <div id="artbutton">
+                            <button>Alan Smith</button>
+                        </div>
+                        
+                    </div>    
+
+                    </div>
+
+                </div>
+
+                    <div id="tikbox">
+                        <h1>Upcoming Tour</h1>
+                        <p>Lorem Ipsum rhis ts toshhoop svetsgin. Proin gravida nibh lorem<br>quis bibendum aucto</p>
+                        <div id="tikbox1">
+                            <div id="tikbox2">
+                                <div id="tiname1">
+                                    <h2>30 Dec</h2>
+                                </div>
+                                <div id="tiname2">
+                                    <h3>West Palm Beach</h3>
+                                    <h5>Miami, Florida</h5>
+                                </div>
+                                <div id="tiname3">
+                                    <button>BUY TICKET</button>
+                                </div>
+                            </div>
+
+                            <div id="tikbox2">
+                                <div id="tiname1">
+                                    <h2>30 Dec</h2>
+                                </div>
+                                <div id="tiname2">
+                                    <h3>Suels Academy</h3>
+                                    <h5>Brussels, Belgium</h5>
+                                </div>
+                                <div id="tiname3">
+                                    <button>BUY TICKET</button>
+                                </div>
+                            </div>
+
+                            <div id="tikbox2">
+                                <div id="tiname1">
+                                    <h2>30 Dec</h2>
+                                </div>
+                                <div id="tiname2">
+                                    <h3>Europe Tour</h3>
+                                    <h5>Colosseum, Italy</h5>
+                                </div>
+                                <div id="tiname3">
+                                    <button>BUY TICKET</button>
+                                </div>
+                            </div>
+                            
+
+                            <div id="tikbox2">
+                                <div id="tiname1">
+                                    <h2>30 Dec</h2>
+                                </div>
+                                <div id="tiname2">
+                                    <h3>City Auditorium</h3>
+                                    <h5>Okayama, Japan</h5>
+                                </div>
+                                <div id="tiname3">
+                                    <button>BUY TICKET</button>
+                                </div>
+                            </div>
+
+                            <div id="tikbox2">
+                                <div id="tiname1">
+                                    <h2>31 Dec</h2>
+                                </div>
+                                <div id="tiname2">
+                                    <h3>Artcsape Theatre</h3>
+                                    <h5>Paris, France</h5>
+                                </div>
+                                <div id="tiname3">
+                                    <button>BUY TICKET</button>
+                                </div>
+                            </div>
+
+                            <div id="tikbox2">
+                                <div id="tiname1">
+                                    <h2>31 Dec</h2>
+                                </div>
+                                <div id="tiname2">
+                                    <h3>Fellows Mansion</h3>
+                                    <h5>Copenhagen, Denmark</h5>
+                                </div>
+                                <div id="tiname3">
+                                    <button>BUY TICKET</button>
+                                </div>
+                            </div>
+
+                            <div id="tikbox2">
+                                <div id="tiname1">
+                                    <h2>31 Dec</h2>
+                                </div>
+                                <div id="tiname2">
+                                    <h3>Brasil Tour</h3>
+                                    <h5>Colosseum, Italy</h5>
+                                </div>
+                                <div id="tiname3">
+                                    <button>BUY TICKET</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                <div id="subbox">
+                    <div id="subbox1">
+                        <div id="opabox1">
+                            <img src="img/main-1.jpg" alt="서브1">
+                        </div>
+                        <div id="opabox2">
+                            <img src="img/main-2.jpg" alt="서브2">
+                        </div>
+                        <div id="opabox3">
+                            <img src="img/main-3.webp" alt="서브3">
+                        </div>
+                        <div id="opabox4">
+                            <img src="img/main-4.jpg" alt="서브4">
+                        </div>
+                        <div id="opabox5">
+                            <img src="img/main-5.jpg" alt="서브5">
+                        </div>
+                        <div id="opabox6">
+                            <img src="img/main-6.jpg" alt="서브6">
+                        </div>
+                    </div>
+                </div> 
+                
+                <div id="musbox">
+                    <div id="musbox1">
+                        <div id="musbox2">
+                            <div id="musimg">
+                                <div id="musimg1">
+                                    <img src="img/chart.jpg" alt="chart">
+                                </div>
+                                <div id="musimg2">
+                                    <h3><b>Neon Blue</b></h3>
+                                    <h5><b>Electro-pop Artist</b></h5>
+                                </div>
+                            </div>
+                            <div id="musbox3">
+                                <div id="chart1">
+                                    <div id="chart2">
+                                        <h4>Frau Power</h4>
+                                        <p>Lorem Upsum</p>
+                                    </div>
+                                    <div id="chart3"></div>
+                                </div>
+                                <div id="chart1">
+                                    <div id="chart2">
+                                        <h4>Black Hole Sun</h4>
+                                        <p>Erit mi Pulvinar</p>
+                                    </div>
+                                    <div id="chart3"></div>
+                                </div>
+                                <div id="chart1">
+                                    <div id="chart2">
+                                        <h4>Memories</h4>
+                                        <p>Pulvinar Tristiq</p>
+                                    </div>
+                                    <div id="chart3"></div>
+                                </div>
+                                <div id="chart1">
+                                    <div id="chart2">
+                                        <h4>Paranoia Overflow</h4>
+                                        <p>Elit Conse</p>
+                                    </div>
+                                    <div id="chart3"></div>
+                                </div>
+                                <div id="chart1">
+                                    <div id="chart2">
+                                        <h4>Last Smile</h4>
+                                        <p>Duis Sued</p>
+                                    </div>
+                                    <div id="chart3"></div>
+                                </div>
+                                <div id="chart1">
+                                    <div id="chart2">
+                                        <h4>Blue Ghost</h4>
+                                        <p>Proin gravi</p>
+                                    </div>
+                                    <div id="chart3"></div>
+                                </div>
+                                <div id="chart1">
+                                    <div id="chart2">
+                                        <h4>Broken Song</h4>
+                                        <p>Lorem Upsum</p>
+                                    </div>
+                                    <div id="chart3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </main>
+
+    <footer></footer>
+
+</body>
+
+</html>
